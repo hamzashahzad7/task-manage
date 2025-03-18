@@ -69,7 +69,7 @@ export default function Home() {
           className="grid grid-cols-6 lg:grid-cols-12 mb-20"
         >
           <div className="col-span-6 text-center lg:text-left">
-            <span className="inline-block px-3 py-1.5 mb-4 bg-[#3DA9FC] bg-opacity-10 text-[#3DA9FC] font-semibold tracking-wide rounded-full">
+            <span className="inline-block px-3 py-1.5 mb-4 bg-[#3DA9FC] bg-opacity-10 text-white font-semibold tracking-wide rounded-full">
               Stay Organized, Stay Ahead
             </span>
             <h1 className="text-5xl sm:text-6xl md:text-7xl mb-4 font-extrabold text-[#094067] leading-tight">
@@ -81,7 +81,7 @@ export default function Home() {
               The ultimate task management tool to boost productivity
             </p>
             <div className="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 justify-center lg:justify-start">
-              <button className="w-full md:w-fit px-9 py-5 bg-[#3DA9FC] flex items-center justify-center md:justify-start text-white font-semibold rounded-md shadow-[0_6px_30px_rgba(61,169,252,0.6)] hover:bg-[#3498E4] group transition-colors duration-300">
+              <Link href={'/login'} className="w-full md:w-fit px-9 py-5 bg-[#3DA9FC] flex items-center justify-center md:justify-start text-white font-semibold rounded-md shadow-[0_6px_30px_rgba(61,169,252,0.6)] hover:bg-[#3498E4] group transition-colors duration-300">
                 <span>Login</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -100,10 +100,10 @@ export default function Home() {
                   <line x1="15" y1="16" x2="19" y2="12"></line>
                   <line x1="15" y1="8" x2="19" y2="12"></line>
                 </svg>
-              </button>
-              <button className="w-fit px-9 py-5 border-solid border-2 rounded-md flex items-center justify-center md:justify-start text-[#3DA9FC] font-semibold space-x-4 hover:scale-105 transition duration-300">
+              </Link>
+              <Link href={'/register'} className="w-fit px-9 py-5 border-solid border-2 rounded-md flex items-center justify-center md:justify-start text-[#3DA9FC] font-semibold space-x-4 hover:scale-105 transition duration-300">
                 <span>Register</span>
-              </button>
+              </Link>
             </div>
           </div>
           <div className="col-span-6 pl-24 hidden lg:block">
