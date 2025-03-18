@@ -20,7 +20,7 @@ const AdminDashboard = () => {
     if (!token) return;
 
     try {
-      const response = await axios.get('http://localhost:5000/api/admin/users', {
+      const response = await axios.get('https://task-manage-api.vercel.app/api/admin/users', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -37,7 +37,7 @@ const AdminDashboard = () => {
     if (!token) return;
 
     try {
-      const response = await axios.get('http://localhost:5000/api/user', {
+      const response = await axios.get('https://task-manage-api.vercel.app/api/user', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -60,7 +60,7 @@ const AdminDashboard = () => {
 
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/admin/user',
+        'https://task-manage-api.vercel.app/api/admin/user',
         { username, password: 'defaultpassword', role }, // Assuming a default password
         {
           headers: {
@@ -93,7 +93,7 @@ const AdminDashboard = () => {
 
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/admin/user/${selectedUser.id}`,
+        `https://task-manage-api.vercel.app/api/admin/user/${selectedUser.id}`,
         { username, role },
         {
           headers: {
@@ -122,7 +122,7 @@ const AdminDashboard = () => {
     }
 
     try {
-      await axios.delete(`http://localhost:5000/api/admin/user/${userId}`, {
+      await axios.delete(`https://task-manage-api.vercel.app/api/admin/user/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -167,7 +167,7 @@ const AdminDashboard = () => {
       <div className="flex-1 p-8">
         {/* Navbar */}
         <div className="flex justify-between items-center mb-6">
-          <div className="text-lg font-semibold text-gray-800">Welcome, {username}</div>
+          <div className="text-lg font-semibold text-gray-800">Welcome, Admin</div>
           <button
             onClick={() => {
               cookie.remove('authToken');

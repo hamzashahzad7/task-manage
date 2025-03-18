@@ -21,7 +21,7 @@ const UserDashboard = () => {
     if (!token) return;
 
     try {
-      const response = await axios.get('http://localhost:5000/api/tasks', {
+      const response = await axios.get('https://task-manage-api.vercel.app/api/tasks', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -38,7 +38,7 @@ const UserDashboard = () => {
     if (!token) return;
 
     try {
-      const response = await axios.get('http://localhost:5000/api/user', {
+      const response = await axios.get('https://task-manage-api.vercel.app/api/user', {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -63,7 +63,7 @@ const UserDashboard = () => {
     if (selectedTask) {
       try {
         const response = await axios.put(
-          `http://localhost:5000/api/task/${selectedTask.id}`,
+          `https://task-manage-api.vercel.app/api/task/${selectedTask.id}`,
           { title, description, dueDate, priority: 'Medium', status: 'Pending', project: 'User Tasks' },
           {
             headers: {
@@ -84,7 +84,7 @@ const UserDashboard = () => {
       // If no task is being edited, create a new one
       try {
         const response = await axios.post(
-          'http://localhost:5000/api/task',
+          'https://task-manage-api.vercel.app/api/task',
           { title, description, dueDate, priority: 'Medium', status: 'Pending', project: 'User Tasks' },
           {
             headers: {
@@ -124,7 +124,7 @@ const UserDashboard = () => {
     }
 
     try {
-      await axios.delete(`http://localhost:5000/api/task/${taskId}`, {
+      await axios.delete(`https://task-manage-api.vercel.app/api/task/${taskId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
